@@ -1,7 +1,6 @@
 coneexperiment.egg-info/
 dist/
 results/
-log/
 analysis/
 build/
 test_data/entailment-test/
