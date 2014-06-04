@@ -68,8 +68,9 @@ class WidthClassifierP(WidthClassifierUP):
                 zeros.append(wd)
 #        print len(ones), len(zeros)
 
-        self.param=float(Separator.separate(ones,zeros))
-        logging.info("Baseline: "+self.name+", Parameter set as "+str(self.widthparameter))
+        self.param, _ = Separator.separate(ones,zeros)
+        self.param = float(self.param)
+        logging.info("Baseline: "+self.name+", Parameter set as "+str(self.param))
 
 class SingleWidthClassifierP:
     def __init__(self,name):
@@ -96,7 +97,8 @@ class SingleWidthClassifierP:
                 zeros.append(wd)
             #        print len(ones), len(zeros)
 
-        self.param=float(Separator.separate(ones,zeros))
+        self.param, _ = Separator.separate(ones,zeros)
+        self.param = float(self.param)
         logging.info("Baseline: "+self.name+", Parameter set as "+str(self.param))
 
 

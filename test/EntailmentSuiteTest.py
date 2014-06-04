@@ -18,7 +18,7 @@ import logging
 class EntailmentSuiteTestCase(unittest.TestCase):
     config_path = 'test_data'
     config_name = 'entailment.cfg'
-    csv_path = 'test_data/entailment-test/analysis.csv'
+    csv_path = 'test_data/unittest/analysis.csv'
     
     def setUp(self):
         logging.basicConfig(filename='log/unittest.log',
