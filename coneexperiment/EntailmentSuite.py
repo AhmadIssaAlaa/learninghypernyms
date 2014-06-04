@@ -1,8 +1,6 @@
 #!/usr/bin/python
 # Bismillahi-r-Rahmani-r-Rahim
 
-# Experiment Suite for machine learning with cones
-
 from expsuite import PyExperimentSuite
 
 from sklearn.datasets import fetch_mldata, load_svmlight_file
@@ -21,14 +19,8 @@ except ImportError:
 
 from EntailmentExperiment import EntailmentExperiment, EntailmentExperimentHeldOut, EntailmentExperimentTrainTest, EntailmentExperimentHeldOutStrict
 from ClassifierMaker import ClassifierMaker
-#from VectorMap import VectorMap
 from TermDB import TermDB
 
-# from learncone.ConeEstimatorFactorise import ConeEstimatorFactorise
-from learncone.ConeEstimator import ConeEstimator
-from learncone.ConeEstimatorGreedy import ConeEstimatorGreedy
-from learncone.ConeEstimatorSVM import ConeEstimatorSVM
-from learncone.ArtificialData import make_data
 from baseline import tools
 
 import evaluate

@@ -10,8 +10,6 @@ from sklearn.dummy import DummyClassifier
 from sklearn.grid_search import GridSearchCV
 from sklearn.metrics import confusion_matrix, f1_score
 
-from learncone.ConeEstimatorSVM import ConeEstimatorSVM
-
 from coneexperiment.EntailmentClassifier import EntailmentClassifier,AddVectorClassifier,MultVectorClassifier,CatVectorClassifier, SingleVectorClassifier
 from baseline.baselineClassifier import BaselineEntailmentClassifier
 from baseline.baselineClassifier import WidthClassifierUP, WidthClassifierP,ClassifierP,ClassifierUP, SingleWidthClassifierP
@@ -65,14 +63,6 @@ class ClassifierMaker(object):
     def _make_linsvmSINGLE(self):
         linsvm = LinearSVC()
         return SingleVectorClassifier(linsvm,self.vectors)
-
-    def _make_conesvm(self):
-        classifier = GridSearchCV(
-            ConeEstimatorSVM(),
-            {'beta' : self.params['beta'],
-             'C' : self.params['costs']},
-            score_func = f1_score)
-        return EntailmentClassifier(classifier, self.vectors)
 
     def _make_widthdiff(self):
         classifier = WidthClassifierUP('widthdiff')
