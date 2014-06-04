@@ -8,6 +8,6 @@ install:
   - # sudo apt-get install -qq python-numpy python-scipy
   - pip install -U pytest scikit-learn
 script:
-  - python setup.py test
+  - py.test test
 virtualenv:
   system_site_packages: true
