@@ -34,10 +34,14 @@ Check that the installation is working by running the tests:
 
     python setup.py test
 
-Experiments are configured by editing the file `entailment.cfg`. To
-run experiments:
+Experiments are configured by editing the file `entailment.cfg`. An
+example experiment is provided in the unit test data folder. To run
+experiments:
 
-    python -m coneexperiment.EntailmentSuite entailment.cfg
+    python -m coneexperiment.EntailmentSuite test_data/entailment.cfg
+
+Running this creates a file `test_data/unittest/analysis.csv`
+containing results of the experiment.
 
 Word vectors are contained in a file whose format should match that of
 `test_data/nouns-deps-small-head.mi`: each line is of format
