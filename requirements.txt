@@ -1,1 +1,1 @@
-https://github.com/SussexCompSem/confusionmetrics.git
+git+git://github.com/SussexCompSem/confusionmetrics.git
