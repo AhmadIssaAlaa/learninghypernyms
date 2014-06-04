@@ -37,7 +37,7 @@ Check that the installation is working by running the tests:
 Experiments are configured by editing the file `entailment.cfg`. To
 run experiments:
 
-    python coneexperiment/EntailmentSuite.py entailment.cfg
+    python -m coneexperiment.EntailmentSuite entailment.cfg
 
 Word vectors are contained in a file whose format should match that of
 `test_data/nouns-deps-small-head.mi`: each line is of format
