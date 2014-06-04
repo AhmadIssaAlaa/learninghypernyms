@@ -6,7 +6,7 @@ before_install:
   - sudo apt-get install -qq python-numpy python-scipy
 install:
   - # sudo apt-get install -qq python-numpy python-scipy
-  - pip install -U scikit-learn
+  - pip install -U pytest scikit-learn
 script:
   - python setup.py test
 virtualenv:
