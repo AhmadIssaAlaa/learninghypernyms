@@ -113,38 +113,3 @@ def nonzero_sorted_indices(matrix):
                         if x in a_nonzero]
     return a_nonzero_sorted
 
-if __name__=="__main__":
-
-    print "Testing similarity function"
-
-    params={}
-    params['datadir'] = '/Volumes/LocalScratchHD/juliewe/Documents/workspace/coneexperiment/data/'
-    params['dataset'] = 'wn-noun-dependencies-original'
-    params['vectors'] =  'nouns-deps.mi.db'
-
-    datadir = params['datadir']
-    dataset_path = os.path.join(datadir, params['dataset'] + '.json')
-    random.seed(abs(hash(str(params))))
-    with open(dataset_path) as dataset_file:
-        dataset = json.load(dataset_file)
-
-    vectors_path = os.path.join(datadir, params['vectors'])
-    print "DB path: ", vectors_path
-    vectors = TermDB(vectors_path)
-
-    terms = list(set(x[0] for x in dataset) |
-                 set(x[1] for x in dataset))
-    term_dicts = (vectors.nouns[x] for x in terms)
-
-
-
-    vectorizer = DictVectorizer(sparse=True)
-    term_vectors = vectorizer.fit_transform(term_dicts)
-        #print terms[1], term_vectors[1]
-    term_map = {terms[i]:term_vectors[i] for i in range(len(terms))}
-
-    myCalculator = SimCalculator()
-
-    for pair in dataset:
-        print pair[0],pair[1], myCalculator.compute_score(pair,term_map,'invCL')
-
