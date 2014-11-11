@@ -17,6 +17,15 @@ Datasets
 The repository also contains the datasets used in our experiments, in
 JSON format. These are in the data folder.
 
+The datafiles created from the BLESS dataset are BLESS_coord.json and BLESS_ent-pairs.json - coord refers to pairs where existence of a coordinate relationship in BLESS is labelled 1 and existence of some other relationship (hyponymy, hypernymy, meronymy, random) is labelled 0.  In ent-pairs a hypernym relationship e.g. robin ISA bird is labelled 1 [robin,bird,1] whereas existence of some other relationship (hyponymy, co-hyponymy, meronymy, random) is labelled 0
+
+The other datafiles are created from WordNet.  All of the words also occur in our dump of wikipedia over 100 times.  In entpairs, a direct hypernym relationship is labelled 1 whereas other relationships (hyponymy and co-hyponymy) are labelled 0.  In coordpairs, a co-hyponym relationship is labelled 1 whereas other realtionships (direct hyponymy and direct hypernymy) are labelled 0.
+
+However, the results reported in our experiments were actually using entpairs2_wiki100 and coordpairs2_wiki100.  In these sets, indirect hypernymy (i.e., any entailment) is included in hypernymy and indirect hyponymy is included in hyponymy.  In other words [robin,animal,1] may exist in the entpairs2_wiki100 set.
+
+All of the datasets are balanced so that there are the same number of positive and negative examples of each relationship.  Where more than 1 relationship is included in the negative examples, these examples are also balanced between the different relationships.
+
+
 Getting Started
 ---------------
 
